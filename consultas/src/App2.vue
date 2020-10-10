@@ -2,19 +2,17 @@
   <div id="app">
     
     <div class="container-fluid">
-      <div class="row align-items-center">
-          <div class="col-sm-2">
-              <img src="./assets/images/logo.png" class="rounded my-3" alt="ViBe Saúde">
-          </div>
-          <div class="col-sm-7 ">
-              <buscaEspecialidades />
-          </div>
-      </div>
-      <div class="row">        
-        <div class="col-sm-6">
+      <div class="row">
+        <div class="col-sm color1 ">
+          <div class="text-center">
+          <img src="./assets/images/logo.png" class="rounded my-3" alt="ViBe Saúde">
+        </div>
+          <navmenu :menuItens="menuItens"></navmenu>
+        </div>
+        <div class="col-sm-5">
           <listaMedicos />
         </div>
-        <div class="col-sm-6 color1">
+        <div class="col-sm-5 color1">
           <table class="table table-striped">
             <thead class="thead-dark">
               <tr>                
@@ -60,14 +58,11 @@
 
 <script>
 import Menu from './components/shared/menu/Menu.vue';
-import Busca from './components/busca/Busca.vue';
-import Medicos from './components/medicos/Medicos.vue';
-
+import Medicos from './components/medicos/Medicos.vue'
 export default {
   components: {
     'navmenu': Menu,
-    'listaMedicos': Medicos,
-    'buscaEspecialidades': Busca
+    'listaMedicos': Medicos
   },
   data(){
     return {
@@ -82,7 +77,7 @@ export default {
         }
       ]
     }
-  }
+  }  
 }
 </script>
 

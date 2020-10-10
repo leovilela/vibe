@@ -1,24 +1,21 @@
 <template>
     <div>
-        <form>
-            <input type="search" class="search" v-model="filtro" placeholder="Digite a especialidade do médico">
-        </form>
         <table class="table table-striped listaMedicos">
             <thead class="thead-dark">
               <tr>
-                <th scope="col">#</th>
+                <th scope="col">#</th>                
                 <th scope="col">Unidade</th>
-                <th scope="col">Medico</th>
                 <th scope="col">Especialidade</th>
+                <th scope="col">Medico</th>                
                 <th></th>
               </tr>
             </thead>
             <tbody v-for="medico in filtrarEspecialidade" :key="medico.id">
               <tr>
-                <th scope="row">{{medico.id}}</th>
+                <th scope="row">{{medico.id}}</th>                
                 <td>{{medico.unidade}}</td>
-                <td>{{medico.nome}}</td>
                 <td>{{medico.especialidade}}</td>
+                <td>{{medico.nome}}</td>                
                 <td v-if="medico.selecionado"><button type="button" class="btn btn-secondary">Selecionado</button></td>
                 <td v-if="!medico.selecionado"><button type="button" class="btn btn-info">Selecionar</button></td>
               </tr>
@@ -29,6 +26,7 @@
 </template>
 
 <script>
+import { mapState } from "vuex";
 import Medico from '../medico/Medico.vue'
 export default {
     components:{
@@ -36,7 +34,6 @@ export default {
     },
     data() {
         return {
-            filtro: null,
             medicos: [
                 {
                     id: 5151,
@@ -81,24 +78,21 @@ export default {
                     selecionado: false
                 },
             ]
-        }
+        } 
     },
 
     computed: {
         filtrarEspecialidade() {
-            if(!this.filtro) {
+            if(!this.busca) {
                 return this.medicos
             }
-            return this.medicos.filter(medico => medico.especialidade.toLowerCase().indexOf(this.filtro.toLowerCase()) >=0)
-        }
+            return this.medicos.filter(medico => medico.especialidade.toLowerCase().indexOf(this.busca.toLowerCase()) >= 0)
+        },
+        ...mapState({
+            busca: state => state.busca.busca
+        }),
     },
 }
 </script>
 
-<style lang="scss" scoped>
-    .search{
-        display: inline-block;
-        width: 100%;
-        margin: 8px 0;
-    }
-</style>
+<style lang="scss" scoped></style>
