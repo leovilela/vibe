@@ -1,17 +1,99 @@
-
 <template>
   <div id="app">
+    
     <div class="container-fluid">
-      vibe
+      <div class="row">
+        <div class="col-sm color1 ">
+          <div class="text-center">
+          <img src="./assets/images/logo.png" class="rounded my-3" alt="ViBe Saúde">
+        </div>
+          <navmenu :menuItens="menuItens"></navmenu>
+        </div>
+        <div class="col-sm-5">
+          <listaMedicos />
+        </div>
+        <div class="col-sm-5 color1">
+          <table class="table table-striped">
+            <thead class="thead-dark">
+              <tr>                
+                <th scope="col">Data</th>
+                <th scope="col">Horário</th>
+                <th scope="col">Status</th>
+                <th scope="col"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">10/09/2020</th>
+                <td>10:00</td>
+                <td>Livre</td>
+                <td><button type="button" class="btn btn-success">Agendar</button></td>
+              </tr>
+              <tr>
+                <th scope="row">10/09/2020</th>
+                <td>10:50</td>
+                <td>Agendado</td>
+                <td><button type="button" class="btn btn-danger">Cancelar</button></td>
+              </tr>
+              <tr>
+                <th scope="row">10/09/2020</th>
+                <td>11:00</td>
+                <td>Livre</td>
+                <td><button type="button" class="btn btn-success">Agendar</button></td>
+              </tr>
+              <tr>
+                <th scope="row">10/09/2020</th>
+                <td>12:00</td>
+                <td>Livre</td>
+                <td><button type="button" class="btn btn-success">Agendar</button></td>
+              </tr>
+              
+            </tbody>
+          </table>
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-export default {}
+import Menu from './components/shared/menu/Menu.vue';
+import Medicos from './components/medicos/Medicos.vue'
+export default {
+  components: {
+    'navmenu': Menu,
+    'listaMedicos': Medicos
+  },
+  data(){
+    return {
+      menuItens: [
+        {
+          name: "Médico",
+          url: '/medico'
+        },
+        {
+          name: "Especialidade",
+          url: '/especialidade'
+        }
+      ]
+    }
+  }  
+}
 </script>
 
 <style lang="scss">
-@import './assets/styles/variables';
-@import './assets/styles/bootstrap';
+.logo{
+  margin-left: auto;
+  margin-right: auto;
+  display: inline-block;
+}
+.color1{
+  background-color: #dadada;
+}
+.color2{
+  background-color: #8a8a8a;
+}
+.color3{
+  background-color: #7a7a7a;
+}
 </style>
