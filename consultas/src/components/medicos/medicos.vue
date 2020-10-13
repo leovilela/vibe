@@ -16,8 +16,10 @@
                 <td>{{medico.unidade}}</td>
                 <td>{{medico.especialidade}}</td>
                 <td>{{medico.nome}}</td>                
-                <td v-if="medico.selecionado"><button type="button" class="btn btn-secondary">Selecionado</button></td>
-                <td v-if="!medico.selecionado"><button type="button" class="btn btn-info">Selecionar</button></td>
+                <td><button type="button" @click="selecionaMedico(medico.id)" class="btn btn-secondary" :class="[!medico.selecionado ? 'btn-secondary' : 'btn-info' ]">
+                    <span v-if="medico.selecionado">Selecionado</span>
+                    <span v-else>Selecionar</span>
+                </button></td>
               </tr>
             </tbody>
           </table>
@@ -34,50 +36,7 @@ export default {
     },
     data() {
         return {
-            medicos: [
-                {
-                    id: 5151,
-                    unidade: 'Pirituba',
-                    nome: 'Jackson do Pandeiro',
-                    especialidade: 'Pediatra',
-                    selecionado: false
-                },
-                {
-                    id: 454,
-                    unidade: 'Lapa',
-                    nome: 'João Gilberto',
-                    especialidade: 'Pediatra',
-                    selecionado: true
-                },
-                {
-                    id: 2222,
-                    unidade: 'Osasco',
-                    nome: 'Gilberto Gil',
-                    especialidade: 'Pediatra',
-                    selecionado: false
-                },
-                {
-                    id: 5657,
-                    unidade: 'Higienópolis',
-                    nome: 'Caetano Veloso',
-                    especialidade: 'Pediatra',
-                    selecionado: false
-                },
-                {
-                    id: 888,
-                    unidade: 'Higienópolis',
-                    nome: 'Chico Buarque',
-                    especialidade: 'Clínico Geral',
-                    selecionado: false
-                },
-                {
-                    id: 8088,
-                    unidade: 'Higienópolis',
-                    nome: 'Cassia Eller',
-                    especialidade: 'Psicólogo',
-                    selecionado: false
-                },
-            ]
+            medicos: []
         } 
     },
 
@@ -92,6 +51,25 @@ export default {
             busca: state => state.busca.busca
         }),
     },
+
+    async created() {
+        try{
+            await this.$http.get('http://localhost:3001/medicos')
+            .then(response => {
+                this.medicos = response.data;
+            });
+        } catch (err) {
+            console.warn(err)
+        }
+
+        
+    },
+
+    methods: {
+        selecionaMedico(event){
+            console.log(event);
+        },
+    }
 }
 </script>
 

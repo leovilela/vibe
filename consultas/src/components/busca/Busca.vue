@@ -5,12 +5,12 @@
 </template>
 
 <script>
-import Vue from 'vue'
-import { mapState, mapActions, mapMutations } from "vuex";
+import Vue from 'vue';
 import Vuex from 'vuex';
-import busca from '../../store/utils'
-
+import { mapState, mapActions, mapMutations } from "vuex";
+import busca from '../../store/utils';
 Vue.use(Vuex);
+
 export default {
     data() {
         return {
@@ -19,13 +19,12 @@ export default {
     },
     watch: {
         filtro(val) { 
-                this.buscaAction(val);            
-            
+                this.buscaAction(val)
         }
     },    
     methods: {
         ...mapActions({
-            buscaAction: "busca/execBusca"
+            buscaAction: 'busca/execBusca'
         })
     }
 }
@@ -37,6 +36,4 @@ export default {
         width: 100%;
         margin: 8px 0;
     }
-</style>>
-
 </style>

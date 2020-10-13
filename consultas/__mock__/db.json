@@ -1,0 +1,89 @@
+{
+  "registerDataPj": {
+    "registrationFormID": null,
+    "cnpj": "20250105000106",
+    "fullName": "testea aas",
+    "simpleName": "ad das",
+    "addressPostalCode": null,
+    "addressNumber": null,
+    "addressAdditionalData": null,
+    "addressStreetName": null,
+    "addressNeighborhood": null,
+    "cityName": null,
+    "uf": "SP",
+    "referencePoint": null,
+    "phone": null,
+    "foundationDate": null,
+    "numCommercialBoard": null,
+    "shareCapitalValue": 0,
+    "successorSocialName": null,
+    "dateIncial": null,
+    "qtdeBranch": null,
+    "mainProducts": null,
+    "branchActivity": "Despachantes",
+    "numEmployees": 215,
+    "optSimplesNacional": null,
+    "socialObject": null,
+    "dateSignature": null,
+    "fileName": null,
+    "hashUpload": null,
+    "postalBox": null,
+    "isAutomobile": null,
+    "ownerName": null,
+    "ownerDocument": null
+  },
+  "menuItens" : [
+    {
+      "name": "Médico",
+      "url": "/medico"
+    },
+    {
+      "name": "Especialidade",
+      "url": "/especialidade"
+    }
+  ],
+  "medicos": [
+    {
+        "id": 5151,
+        "unidade": "Pirituba",
+        "nome": "Jackson do Pandeiro",
+        "especialidade": "Pediatra",
+        "selecionado": false
+    },
+    {
+        "id": 454,
+        "unidade": "Lapa",
+        "nome": "João Gilberto",
+        "especialidade": "Pediatra",
+        "selecionado": true
+    },
+    {
+        "id": 2222,
+        "unidade": "Osasco",
+        "nome": "Gilberto Gil",
+        "especialidade": "Pediatra",
+        "selecionado": false
+    },
+    {
+        "id": 5657,
+        "unidade": "Higienópolis",
+        "nome": "Caetano Veloso",
+        "especialidade": "Pediatra",
+        "selecionado": false
+    },
+    {
+        "id": 888,
+        "unidade": "Higienópolis",
+        "nome": "Chico Buarque",
+        "especialidade": "Clínico Geral",
+        "selecionado": false
+    },
+    {
+        "id": 8088,
+        "unidade": "Higienópolis",
+        "nome": "Cassia Eller",
+        "especialidade": "Psicólogo",
+        "selecionado": false
+    }
+  ]
+}
