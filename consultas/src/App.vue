@@ -15,43 +15,7 @@
           <listaMedicos />
         </div>
         <div class="col-sm-6 color1">
-          <table class="table table-striped">
-            <thead class="thead-dark">
-              <tr>                
-                <th scope="col">Data</th>
-                <th scope="col">Horário</th>
-                <th scope="col">Status</th>
-                <th scope="col"></th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">10/09/2020</th>
-                <td>10:00</td>
-                <td>Livre</td>
-                <td><button type="button" class="btn btn-success">Agendar</button></td>
-              </tr>
-              <tr>
-                <th scope="row">10/09/2020</th>
-                <td>10:50</td>
-                <td>Agendado</td>
-                <td><button type="button" class="btn btn-danger">Cancelar</button></td>
-              </tr>
-              <tr>
-                <th scope="row">10/09/2020</th>
-                <td>11:00</td>
-                <td>Livre</td>
-                <td><button type="button" class="btn btn-success">Agendar</button></td>
-              </tr>
-              <tr>
-                <th scope="row">10/09/2020</th>
-                <td>12:00</td>
-                <td>Livre</td>
-                <td><button type="button" class="btn btn-success">Agendar</button></td>
-              </tr>
-              
-            </tbody>
-          </table>
+          <calendario />
         </div>
       </div>
     </div>
@@ -62,12 +26,14 @@
 import Menu from './components/shared/menu/Menu.vue';
 import Busca from './components/busca/Busca.vue';
 import Medicos from './components/medicos/Medicos.vue';
+import Calendario from './components/calendario/Calendario.vue';
 
 export default {
   components: {
     'navmenu': Menu,
     'listaMedicos': Medicos,
-    'buscaEspecialidades': Busca
+    'buscaEspecialidades': Busca,
+    'calendario': Calendario,
   },
   data(){
     return {
