@@ -16,8 +16,8 @@
                 <td>{{medico.unidade}}</td>
                 <td>{{medico.especialidade}}</td>
                 <td>{{medico.nome}}</td>                
-                <td><button type="button" @click="selecionaMedico(medico.id)" class="btn btn-secondary" :class="[!medico.selecionado ? 'btn-secondary' : 'btn-info' ]">
-                    <span v-if="medico.selecionado">Selecionado</span>
+                <td><button type="button" @click="selecionaCalendario(medico.id)" class="btn btn-secondary" :class="[selecionado != medico.id ? 'btn-secondary' : 'btn-info' ]">
+                    <span v-if="selecionado == medico.id">Selecionado</span>
                     <span v-else>Selecionar</span>
                 </button></td>
               </tr>
@@ -28,15 +28,21 @@
 </template>
 
 <script>
-import { mapState } from "vuex";
-import Medico from '../medico/Medico.vue'
+import Vue from 'vue';
+import Medico from '../medico/Medico.vue';
+
+import Vuex from 'vuex';
+import { mapState, mapActions, mapMutations } from "vuex";
+Vue.use(Vuex);
+
 export default {
     components:{
         'itemMedico': Medico
     },
     data() {
         return {
-            medicos: []
+            medicos: [],
+            selecionado: null
         } 
     },
 
@@ -45,6 +51,7 @@ export default {
             if(!this.busca) {
                 return this.medicos
             }
+            this.selecionado = null;
             return this.medicos.filter(medico => medico.especialidade.toLowerCase().indexOf(this.busca.toLowerCase()) >= 0)
         },
         ...mapState({
@@ -65,11 +72,18 @@ export default {
         
     },
 
-    methods: {
-        selecionaMedico(event){
-            console.log(event);
-        },
-    }
+    
+         methods: {
+             selecionaCalendario(id) {
+                this.selecionado = id;
+                this.execCalendario(id);
+             },
+            ...mapActions({
+                execCalendario: 'calendario/execCalendario'
+            })
+        }
+
+    
 }
 </script>
 

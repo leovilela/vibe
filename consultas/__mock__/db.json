@@ -85,5 +85,119 @@
         "especialidade": "Psicólogo",
         "selecionado": false
     }
+  ],
+  "5151": [
+    {
+      "id": 1,
+      "data": "10/09/2020",
+      "horario": "10:00",
+      "status": "Livre"
+    },
+    {
+      "id": 2,
+      "data": "10/09/2020",
+      "horario": "11:00",
+      "status": "Livre"
+    }
+  ],
+  "454": [
+    {
+      "id": 3,
+      "data": "11/09/2020",
+      "horario": "10:00",
+      "status": "Agendado"
+    }
+  ],
+  "2222": [
+    {
+      "id": 4,
+      "data": "11/09/2020",
+      "horario": "11:00",
+      "status": "Agendado"
+    },
+    {
+      "id": 5,
+      "data": "12/09/2020",
+      "horario": "11:00",
+      "status": "Livre"
+    }
+  ],
+  "5657": [
+    {
+      "id": 6,
+      "data": "11/09/2020",
+      "horario": "11:00",
+      "status": "Agendado"
+    },
+    {
+      "id": 7,
+      "data": "12/09/2020",
+      "horario": "11:00",
+      "status": "Livre"
+    },
+    {
+      "id": 8,
+      "data": "13/09/2020",
+      "horario": "11:00",
+      "status": "Livre"
+    },
+    {
+      "id": 9,
+      "data": "14/09/2020",
+      "horario": "11:00",
+      "status": "Livre"
+    }
+  ],
+  "888": [
+    {
+      "id": 10,
+      "data": "11/09/2020",
+      "horario": "11:00",
+      "status": "Agendado"
+    },
+    {
+      "id": 11,
+      "data": "12/09/2020",
+      "horario": "11:00",
+      "status": "Livre"
+    },
+    {
+      "id": 12,
+      "data": "13/09/2020",
+      "horario": "11:00",
+      "status": "Livre"
+    },
+    {
+      "id": 13,
+      "data": "14/09/2020",
+      "horario": "11:00",
+      "status": "Livre"
+    },
+    {
+      "id": 14,
+      "data": "15/09/2020",
+      "horario": "11:00",
+      "status": "Livre"
+    },
+    {
+      "id": 15,
+      "data": "16/09/2020",
+      "horario": "11:00",
+      "status": "Livre"
+    },
+    {
+      "id": 16,
+      "data": "17/09/2020",
+      "horario": "11:00",
+      "status": "Livre"
+    }
+  ],
+  "8088": [
+    {
+      "id": 17,
+      "data": "20/09/2020",
+      "horario": "11:00",
+      "status": "Agendado"
+    }
   ]
 }

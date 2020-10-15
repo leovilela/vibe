@@ -19,13 +19,16 @@ export default {
     },
     watch: {
         filtro(val) { 
-                this.buscaAction(val)
+                this.buscaAction(val);
+                this.execCalendario(null);
+                
         }
     },    
     methods: {
         ...mapActions({
-            buscaAction: 'busca/execBusca'
-        })
+            buscaAction: 'busca/execBusca',
+            execCalendario: 'calendario/execCalendario'
+        })       
     }
 }
 </script>
